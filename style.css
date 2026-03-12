@@ -1,0 +1,120 @@
+/* Splošne nastavitve telesa strani */
+body {
+    background-image: url("slike/ozadje.png"); /* Temno sivo ozadje */
+	background-size: cover;      
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+    color: white;
+    font-family: 'Comic Sans MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Skrij drsnike */
+}
+
+/* Naslov in navodila */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 28px;
+    color: #ffcc00; /* Zlato-rumena */
+}
+
+p {
+    margin-top: 0;
+    color: #999;
+    font-size: 16px;
+}
+
+/* Okvir okoli igre */
+#game-wrapper {
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    border: 4px solid #555;
+    border-radius: 4px;
+    background-color: white;
+    line-height: 0; /* Prepreči prazen prostor pod SVG */
+}
+
+/* --- SVG Elementi --- */
+
+/* Igralec (rdeč krogec) */
+#player {
+    fill: #ff0000;
+    stroke: #330000;
+    stroke-width: 1px;
+}
+
+/* Policist (moder krogec) */
+#police {
+    fill: #0000ff;
+    stroke: #000033;
+    stroke-width: 1px;
+}
+
+/* Stene labirinta */
+#walls line {
+    stroke: #000; /* Črne stene */
+    stroke-width: 2px;
+    stroke-linecap: square;
+}
+
+/* Skrita rešitev (kot zahtevano) */
+#solution-path {
+    display: none; 
+}
+
+/* --- Overlays (zasloni za Zmago/Poraz) --- */
+.overlay {
+    display: none; /* Skrito na začetku */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95); /* Skoraj črno ozadje */
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Na vrhu vsega */
+    text-align: center;
+}
+
+/* Slike v overlayu */
+.overlay img {
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+/* Sporočila */
+.msg-lose { font-size: 30px; color: red; font-weight: bold; }
+.msg-win { font-size: 30px; color: lime; font-weight: bold; }
+
+/* Gumbi */
+button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+button:hover {
+    background: #e6b800;
+}
